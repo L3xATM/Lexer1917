@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #1A1B3A 0%, #000000 100%);
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+
+/* Kuromi-inspired custom styles */
+.kuromi-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.kuromi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(233, 30, 99, 0.3);
+}
+
+.kuromi-button {
+  background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.kuromi-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
+}
+
+.kuromi-icon {
+  transition: all 0.3s ease;
+}
+
+.kuromi-icon:hover {
+  transform: scale(1.2);
+  color: #FF69B4;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1B3A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #FF69B4 0%, #E91E63 100%);
+}
