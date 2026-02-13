@@ -1,287 +1,162 @@
-/* Kuromi-themed custom styles */
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  color: #f3f6ff;
 }
 
-/* Custom animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.hero {
+  margin-bottom: 1.5rem;
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(233, 30, 99, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(233, 30, 99, 0.8);
-  }
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7cc4ff;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
-/* Enhanced kuromi-card styles */
-.kuromi-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
 }
 
-.kuromi-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.hero p {
+  color: #d7e1ff;
 }
 
-.kuromi-card:hover::before {
-  opacity: 1;
+.layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
-.kuromi-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(233, 30, 99, 0.3);
-  border-color: rgba(233, 30, 99, 0.5);
+.card {
+  background: #121935;
+  border: 1px solid #2f3f75;
+  border-radius: 14px;
+  padding: 1rem;
 }
 
-/* Enhanced kuromi-button styles */
-.kuromi-button {
-  background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
-  border: none;
-  border-radius: 25px;
-  color: white;
+.form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
   font-weight: 600;
-  padding: 12px 30px;
-  transition: all 0.3s ease;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #3f538f;
+  background: #0f152b;
+  color: #eef3ff;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+}
+
+button {
+  background: #1d6cff;
+  border: none;
+  font-weight: 700;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
+}
+
+.preview {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.table-wrap + .table-wrap {
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  padding: 0.4rem;
+  border-bottom: 1px solid #263567;
+  text-align: left;
+}
+
+.news-section {
+  margin-top: 1rem;
+}
+
+.news-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.news-header select {
+  width: auto;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.9rem;
+}
+
+.news-card {
+  background: #0f152b;
+  border: 1px solid #263567;
+  border-radius: 12px;
   overflow: hidden;
 }
 
-.kuromi-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
+.news-card img {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s ease;
+  height: 170px;
+  object-fit: cover;
 }
 
-.kuromi-button:hover::before {
-  left: 100%;
+.news-card div {
+  padding: 0.8rem;
 }
 
-.kuromi-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
-}
-
-.kuromi-button:active {
-  transform: translateY(0);
-}
-
-/* Navigation styles */
-nav {
-  transition: all 0.3s ease;
-}
-
-nav a {
-  position: relative;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Icon animations */
-.kuromi-icon {
-  transition: all 0.3s ease;
-}
-
-.kuromi-icon:hover {
-  transform: scale(1.2) rotate(5deg);
-  color: #FF69B4;
-}
-
-/* Profile image styles */
-.profile-image {
-  position: relative;
-}
-
-.profile-image::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
-  border-radius: 50%;
-  z-index: -1;
-  opacity: 0.3;
-  animation: pulse-glow 2s infinite;
-}
-
-/* Section dividers */
-.section-divider {
-  height: 2px;
-  background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
-  margin: 40px 0;
-  border-radius: 1px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .kuromi-card {
-    border-radius: 15px;
-    padding: 1.5rem;
-  }
-  
-  .kuromi-button {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-  }
-  
-  nav {
-    padding: 0.75rem 1rem;
-  }
-  
-  nav .flex {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  nav .flex > div:last-child {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Loading spinner */
-.loading-spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid rgba(233, 30, 99, 0.3);
-  border-top: 4px solid #E91E63;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Cute decorative elements */
-.cute-heart {
+.badge {
   display: inline-block;
-  animation: float 2s ease-in-out infinite;
+  background: #244fc9;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
-.cute-star {
-  display: inline-block;
-  animation: pulse-slow 2s infinite;
+.meta {
+  color: #96a8d9;
+  font-size: 0.9rem;
 }
 
-/* Text gradient effect */
-.text-gradient {
-  background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Hover effects for contact cards */
-.contact-card:hover {
-  background: rgba(233, 30, 99, 0.1);
-  transform: translateY(-3px) scale(1.02);
-}
-
-/* Skills grid animations */
-.skill-card {
-  transition: all 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(233, 30, 99, 0.2);
-}
-
-.skill-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.skill-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.skill-card:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.skill-card:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Focus styles for better accessibility */
-.kuromi-button:focus,
-.kuromi-card:focus {
-  outline: 2px solid #E91E63;
-  outline-offset: 2px;
-}
-
-/* Print styles */
-@media print {
-  .kuromi-card {
-    border: 1px solid #ccc;
-    background: white;
-    color: black;
-  }
-  
-  .kuromi-button {
-    background: #E91E63;
-    color: white;
+@media (max-width: 900px) {
+  .layout,
+  .grid-2 {
+    grid-template-columns: 1fr;
   }
 }
